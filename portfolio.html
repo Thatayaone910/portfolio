@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+    <title>Thatayaone Rapetsoa - Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -163,6 +163,15 @@
             max-width: 600px;
         }
 
+        .contact-info-hero {
+            margin-top: 20px;
+        }
+
+        .contact-info-hero p {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
         .hero-image {
             flex: 1;
             min-width: 300px;
@@ -204,6 +213,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 20px;
+            margin-right: 15px;
             text-shadow: var(--neon-glow);
             box-shadow: var(--neon-glow);
         }
@@ -217,7 +227,7 @@
         /* About Section */
         .about-content {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
             gap: 50px;
         }
@@ -233,98 +243,215 @@
             margin-bottom: 20px;
         }
 
+        .personal-details {
+            background-color: rgba(10, 25, 47, 0.5);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 3px solid var(--matrix-green);
+            margin-top: 30px;
+        }
+
+        .personal-details h3 {
+            color: var(--matrix-green);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .personal-details p {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        /* Skills Section */
         .skills-container {
             flex: 1;
             min-width: 300px;
         }
 
-        .skill {
-            margin-bottom: 25px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        .skill-name {
+        .skill-category {
+            background-color: rgba(10, 25, 47, 0.7);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 65, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--matrix-green);
+            margin-bottom: 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .skill-list {
+            list-style-type: none;
+        }
+
+        .skill-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-text);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .skill-list li:before {
+            content: "▸";
+            color: var(--matrix-green);
+            position: absolute;
+            left: 0;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--matrix-green);
+            box-shadow: var(--neon-glow);
+        }
+
+        .experience-item {
+            background-color: rgba(10, 25, 47, 0.7);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            margin-left: 70px;
+            border: 1px solid rgba(0, 255, 65, 0.1);
+            position: relative;
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--matrix-green);
+            box-shadow: var(--neon-glow);
+        }
+
+        .experience-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
         }
 
-        .skill-bar {
-            height: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
+        .experience-title {
+            font-size: 22px;
+            color: var(--light-text);
         }
 
-        .skill-level {
-            height: 100%;
-            background-color: var(--matrix-green);
-            border-radius: 5px;
-            box-shadow: var(--neon-glow);
-            width: 0;
-            transition: width 1.5s ease;
+        .experience-date {
+            color: var(--matrix-green);
+            font-weight: 600;
         }
 
-        /* Projects Section */
-        .projects-grid {
+        .experience-company {
+            color: var(--gray-text);
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .experience-details ul {
+            list-style-type: none;
+        }
+
+        .experience-details li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--gray-text);
+        }
+
+        .experience-details li:before {
+            content: "•";
+            color: var(--matrix-green);
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+
+        /* Education & Certificates Section */
+        .education-certs {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
 
-        .project-card {
+        .education-card, .cert-card {
             background-color: rgba(10, 25, 47, 0.7);
             border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 25px;
             border: 1px solid rgba(0, 255, 65, 0.1);
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.2);
-            border-color: var(--matrix-green);
-        }
-
-        .project-img {
-            height: 200px;
-            width: 100%;
-            background-color: rgba(0, 255, 65, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .education-card h3, .cert-card h3 {
             color: var(--matrix-green);
-            font-size: 50px;
+            margin-bottom: 15px;
+            font-size: 22px;
         }
 
-        .project-info {
-            padding: 20px;
+        .education-card p, .cert-card p {
+            color: var(--gray-text);
+            margin-bottom: 10px;
         }
 
-        .project-info h3 {
+        /* References Section */
+        .references-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .reference-card {
+            background-color: rgba(10, 25, 47, 0.7);
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid rgba(0, 255, 65, 0.1);
+            text-align: center;
+        }
+
+        .reference-name {
+            color: var(--matrix-green);
             font-size: 22px;
             margin-bottom: 10px;
+        }
+
+        .reference-position {
             color: var(--light-text);
-        }
-
-        .project-info p {
-            color: var(--gray-text);
             margin-bottom: 15px;
+            font-style: italic;
         }
 
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .tech-tag {
-            background-color: rgba(0, 255, 65, 0.1);
-            color: var(--matrix-green);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 14px;
+        .reference-contact {
+            color: var(--gray-text);
+            margin-bottom: 5px;
         }
 
         /* Contact Section */
@@ -484,6 +611,27 @@
                 width: 250px;
                 height: 250px;
             }
+
+            .experience-timeline:before {
+                left: 20px;
+            }
+
+            .experience-item {
+                margin-left: 50px;
+            }
+
+            .experience-item:before {
+                left: -30px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .experience-date {
+                margin-top: 5px;
+            }
         }
     </style>
 </head>
@@ -493,7 +641,7 @@
 
     <!-- Header -->
     <header>
-        <div class="logo">Dev<span>Portfolio</span></div>
+        <div class="logo">TR<span>Dev</span></div>
         <button class="menu-toggle" id="menu-toggle">
             <i class="fas fa-bars"></i>
         </button>
@@ -501,7 +649,9 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -511,15 +661,22 @@
     <section id="home">
         <div class="hero">
             <div class="hero-text">
-                <h1>Hi, I'm <span class="highlight">Alex</span></h1>
-                <h1>A <span class="highlight">Software Engineer</span></h1>
-                <p>I build digital solutions with clean code and modern technologies. Passionate about creating efficient software that makes a difference.</p>
-                <a href="#projects" class="btn">View My Work</a>
+                <h1>Hi, I'm <span class="highlight">Thatayaone Rapetsoa</span></h1>
+                <h1>Aspiring <span class="highlight">Software Developer</span></h1>
+                <p>Motivated beginner in software development with a background in community development, focused on creating practical, people-centred technology solutions while growing within the tech industry.</p>
+                
+                <div class="contact-info-hero">
+                    <p><i class="fas fa-map-marker-alt"></i> 6920 Rose Road, Fleurhof, Randburg</p>
+                    <p><i class="fas fa-phone"></i> 082 715 4414</p>
+                    <p><i class="fas fa-envelope"></i> thatoyaone910@gmail.com</p>
+                </div>
+                
                 <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#experience" class="btn">View My Experience</a>
             </div>
             <div class="hero-image">
                 <div class="avatar-container">
-                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Developer&backgroundColor=0a192f&hairColor=00ff41" alt="Developer Avatar" class="avatar" id="avatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Thatayaone&backgroundColor=0a192f&hairColor=00ff41" alt="Thatayaone Rapetsoa" class="avatar" id="avatar">
                 </div>
             </div>
         </div>
@@ -530,96 +687,135 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>I'm a passionate software engineer with a focus on creating efficient, scalable, and user-friendly applications. I enjoy turning complex problems into simple, beautiful designs.</p>
-                <p>My journey in software development began with a curiosity about how things work, which led me to explore various programming languages and technologies. I believe in continuous learning and staying updated with the latest industry trends.</p>
-                <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee while reading tech blogs.</p>
+                <p>I am a motivated beginner in software development with a strong background in community development. My unique combination of technical curiosity and people-centered experience drives me to create technology solutions that are both practical and impactful.</p>
+                
+                <p>Currently building my coding and problem-solving skills, I'm focused on developing technical expertise, gaining hands-on experience, and growing within the tech industry while continuing my studies. I believe that technology should serve people, and my background in community work gives me a unique perspective on user-centered design.</p>
+                
+                <div class="personal-details">
+                    <h3>Personal Details</h3>
+                    <p><strong>Date of Birth:</strong> 06 March 2001</p>
+                    <p><strong>Gender:</strong> Female</p>
+                    <p><strong>Nationality:</strong> South African</p>
+                </div>
             </div>
-            <div class="skills-container">
-                <h3 style="margin-bottom: 30px; color: var(--matrix-green);">My Skills</h3>
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>HTML/CSS</span>
-                        <span>95%</span>
+            
+            <div class="skills-container" id="skills">
+                <h3 class="section-title" style="font-size: 28px; margin-bottom: 30px;">My Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li>Programming Fundamentals (Python)</li>
+                            <li>GitHub & Version Control</li>
+                            <li>VS Code Development</li>
+                            <li>CRM Systems (Dynamics, Persal)</li>
+                            <li>Microsoft Office / Google Workspace</li>
+                        </ul>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="95"></div>
+                    
+                    <div class="skill-category">
+                        <h3>Professional Skills</h3>
+                        <ul class="skill-list">
+                            <li>Analytical Thinking</li>
+                            <li>Attention to Detail</li>
+                            <li>Collaboration in Technical Teams</li>
+                            <li>Communication of Technical Ideas</li>
+                            <li>Data Management & Accuracy</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>JavaScript</span>
-                        <span>90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="90"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span>85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="85"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>React</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" data-level="80"></div>
+                    
+                    <div class="skill-category">
+                        <h3>Community & Soft Skills</h3>
+                        <ul class="skill-list">
+                            <li>Community Liaison & Facilitation</li>
+                            <li>Basic Computer Literacy Training</li>
+                            <li>Mentorship & Early Learning Support</li>
+                            <li>Project Monitoring & Reporting</li>
+                            <li>Group Session Facilitation</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-chart-line"></i>
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Placement Facilitator Volunteer</div>
+                    <div class="experience-date">Nov 2025 - Present</div>
                 </div>
-                <div class="project-info">
-                    <h3>Data Visualization Tool</h3>
-                    <p>A web application for creating interactive data visualizations using D3.js and React.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">D3.js</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="project-info">
-                    <h3>E-Commerce Platform</h3>
-                    <p>Full-featured online store with user authentication, payment processing, and admin dashboard.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
+                <div class="experience-company">WeThinkCode</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Support students in preparation for workplace placements</li>
+                        <li>Ensure readiness and compliance with placement requirements</li>
+                    </ul>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fas fa-gamepad"></i>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Data Capturer</div>
+                    <div class="experience-date">Jul 2023 - Mar 2024</div>
                 </div>
-                <div class="project-info">
-                    <h3>Browser Game</h3>
-                    <p>A fun interactive game built with vanilla JavaScript using HTML5 Canvas.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">HTML5 Canvas</span>
-                        <span class="tech-tag">CSS3</span>
-                    </div>
+                <div class="experience-company">Gauteng Office of the Premier</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Maintained accurate data records</li>
+                        <li>Used front and back office systems (CRM Dynamics, Persal)</li>
+                        <li>Participated in project monitoring and reporting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">Community Liaison Officer</div>
+                    <div class="experience-date">Mar 2019 - Oct 2021</div>
+                </div>
+                <div class="experience-company">Mathogonolo Community Outreach</div>
+                <div class="experience-details">
+                    <ul>
+                        <li>Facilitated group sessions and basic computer literacy for learners</li>
+                        <li>Helped empower primary school learners with essential skills</li>
+                        <li>Participated in mentorship and early learning support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certificates Section -->
+    <section id="education">
+        <h2 class="section-title">Education & Certificates</h2>
+        <div class="education-certs">
+            <div class="education-card">
+                <h3>Education</h3>
+                <p><strong>National Senior Certificate (NSC)</strong></p>
+                <p>Gevsdorp Secondary School – 2018</p>
+            </div>
+            
+            <div class="cert-card">
+                <h3>Certificates</h3>
+                <p>• 4th Industrial Revolution Awareness</p>
+                <p>• Teaching English as a Foreign Language</p>
+            </div>
+            
+            <div class="reference-card">
+                <h3>References</h3>
+                <div class="reference-item">
+                    <p class="reference-name">Nthabiseng Sekere</p>
+                    <p class="reference-position">Director</p>
+                    <p class="reference-contact">082 907 8444</p>
+                </div>
+                <div class="reference-item" style="margin-top: 20px;">
+                    <p class="reference-name">Prince Phetoe</p>
+                    <p class="reference-position">Manager</p>
+                    <p class="reference-contact">073 049 9775</p>
                 </div>
             </div>
         </div>
@@ -636,7 +832,7 @@
                     </div>
                     <div>
                         <h3>Email</h3>
-                        <p>alex@developerportfolio.com</p>
+                        <p>thatoyaone910@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -645,7 +841,7 @@
                     </div>
                     <div>
                         <h3>Phone</h3>
-                        <p>+1 (555) 123-4567</p>
+                        <p>082 715 4414</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -654,7 +850,7 @@
                     </div>
                     <div>
                         <h3>Location</h3>
-                        <p>San Francisco, CA</p>
+                        <p>6920 Rose Road, Fleurhof, Randburg</p>
                     </div>
                 </div>
             </div>
@@ -691,10 +887,10 @@
                 <i class="fab fa-twitter"></i>
             </a>
             <a href="#" class="social-link">
-                <i class="fab fa-codepen"></i>
+                <i class="fas fa-file-pdf"></i>
             </a>
         </div>
-        <p class="copyright">&copy; 2023 Developer Portfolio. All rights reserved.</p>
+        <p class="copyright">&copy; 2025 Thatayaone Rapetsoa. All rights reserved.</p>
     </footer>
 
     <script>
@@ -800,21 +996,6 @@
             });
         });
         
-        // Animate skill bars on scroll
-        function animateSkillBars() {
-            const skillLevels = document.querySelectorAll('.skill-level');
-            
-            skillLevels.forEach(skill => {
-                const level = skill.getAttribute('data-level');
-                const skillPosition = skill.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if(skillPosition < screenPosition) {
-                    skill.style.width = level + '%';
-                }
-            });
-        }
-        
         // Form submission
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', function(e) {
@@ -840,12 +1021,6 @@
         
         // Animation loop for Matrix effect
         setInterval(drawMatrix, 35);
-        
-        // Check for skill bar animation on scroll
-        window.addEventListener('scroll', animateSkillBars);
-        
-        // Initial check for skill bars
-        animateSkillBars();
     </script>
 </body>
 </html>
